@@ -1,53 +1,71 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
+import Logo from "../assets/images/logo-presently.svg";
 
 const LoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-indigo-700 px-4">
-      <form className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-sm">
-        <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-          Welcome Back
+    <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 h-screen">
+    <div className="flex flex-col justify-center items-center p-8">
+      <form className="w-full max-w-md md:shadow-sm md:bg-gray-100 md:rounded-xl md:p-10 lg:shadow-none lg:rounded-none lg:bg-transparent lg:p-0">
+        <h1 className="text-2xl font-bold text-[#116E63] mb-6">
+          Masuk
         </h1>
         <div className="mb-5">
           <label
             htmlFor="email"
             className="block mb-2 text-sm font-medium text-gray-700"
           >
-            Email Address
+            Email/No Telepon
           </label>
           <input
             type="email"
             id="email"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg block w-full p-3 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="example@gmail.com"
+            className="shadow-sm border border-gray-300 text-gray-700 text-sm rounded-[12px] block w-full p-3 font-normal"
+            placeholder="Contoh: johndoe@gmail.com"
             required
           />
         </div>
         <div className="mb-5">
-          <label
-            htmlFor="password"
-            className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
-          >
-            Password
-            <a
-              href="#"
-              className="text-blue-600 text-sm hover:underline font-normal"
-            >
-              Forgot Password?
-            </a>
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg block w-full p-3 focus:ring-blue-500 focus:border-blue-500"
-            required
-          />
-        </div>
+      <label
+        htmlFor="password"
+        className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
+      >
+        Password
+        <a
+          href="#"
+          className="text-[#116E63] text-sm hover:underline font-medium"
+        >
+          Lupa kata sandi?
+        </a>
+      </label>
+      <div className="relative">
+        <input
+          type={showPassword ? "text" : "password"}
+          id="password"
+          className="shadow-sm border border-gray-300 text-gray-700 text-sm rounded-[12px] block w-full p-3 pr-10 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Masukan Password"
+          required
+        />
+        <button
+          type="button"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? (
+            <EyeOff size={20} />
+          ) : (
+            <Eye size={20} />
+          )}
+        </button>
+      </div>
+    </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white rounded-lg py-3 font-medium hover:bg-blue-700 transition duration-300"
+          className="w-full bg-[#116E63] text-white rounded-[12px] py-3 font-medium hover:opacity-95 transition duration-300"
         >
-          Login
+        Masuk
         </button>
         <div className="mt-6 flex flex-col items-center">
           <button
@@ -79,12 +97,17 @@ const LoginPage = () => {
             </svg>
             Login with Google
           </button>
-          <button className="text-blue-600 text-sm font-medium hover:underline">
-            Create an Account
+          <button className="text-black text-sm font-normal flex gap-3">
+            Belum punya akun? 
+            <span className="text-[#116E63] hover:underline">Daftar disini</span>
           </button>
         </div>
       </form>
     </div>
+    <div className="bg-[#F8F8F8] lg:flex flex-col justify-center items-center p-8 hidden">
+      <img src={Logo} alt="logo presently" className="md:w-56 lg:w-96" />
+    </div>
+    </section>
   );
 };
 
