@@ -108,7 +108,7 @@ const RegisterPage = () => {
             type="submit"
             className="w-full bg-[#116E63] text-white rounded-[12px] py-3 font-medium hover:opacity-95 transition duration-300"
           >
-            Masuk
+            Daftar
           </button>
           <div className="mt-6 flex flex-col items-center">
             <button
