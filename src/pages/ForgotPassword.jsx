@@ -22,7 +22,7 @@ const ForgotPassword = () => {
           onSubmit={handleSubmit}
           className="w-full max-w-md md:shadow-sm md:bg-gray-100 md:rounded-xl md:p-10 lg:shadow-none lg:rounded-none lg:bg-transparent lg:p-0"
         >
-          <h1 className="text-2xl font-bold text-[#116E63] mb-6">Masuk</h1>
+          <h1 className="text-2xl font-bold text-[#116E63] mb-6">Forgot Password</h1>
           <div className="mb-5">
             <label
               htmlFor="email"
