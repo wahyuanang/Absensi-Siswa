@@ -9,7 +9,6 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate login check - replace with actual login logic
     setError(true);
   };
 
@@ -107,7 +106,7 @@ const LoginPage = () => {
             </button>
             <button className="text-black text-sm font-normal flex gap-3">
               Belum punya akun? 
-              <span className="text-[#116E63] hover:underline">Daftar disini</span>
+              <span className="text-[#116E63] hover:underline font-medium">Daftar disini</span>
             </button>
           </div>
         </form>
