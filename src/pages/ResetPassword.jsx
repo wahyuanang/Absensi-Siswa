@@ -22,28 +22,37 @@ const ForgotPassword = () => {
           onSubmit={handleSubmit}
           className="w-full max-w-md md:shadow-sm md:bg-gray-100 md:rounded-xl md:p-10 lg:shadow-none lg:rounded-none lg:bg-transparent lg:p-0"
         >
-          <h1 className="text-2xl font-bold text-[#116E63] mb-6">Masuk</h1>
+          <h1 className="text-2xl font-bold text-[#116E63] mb-6">Reset Password</h1>
           <div className="mb-5">
             <label
-              htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-700"
+              htmlFor="password"
+              className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
             >
-              Email/No Telepon
+              Masukkan Password Baru
             </label>
-            <input
-              type="email"
-              id="email"
-              className="shadow-sm border border-gray-300 text-gray-700 text-sm rounded-[12px] block w-full p-3 font-normal"
-              placeholder="Contoh: johndoe@gmail.com"
-              required
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                className="shadow-sm border border-gray-300 text-gray-700 text-sm rounded-[12px] block w-full p-3 pr-10 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Masukan Password"
+                required
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
           </div>
           <div className="mb-5">
             <label
               htmlFor="password"
               className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
             >
-              Password
+              Ulangi Password Baru
             </label>
             <div className="relative">
               <input
@@ -66,7 +75,7 @@ const ForgotPassword = () => {
             type="submit"
             className="w-full bg-[#116E63] text-white rounded-[12px] py-3 font-medium hover:opacity-95 transition duration-300"
           >
-            Kirim Tautan
+            Simpan
           </button>
         </form>
         {error && (
@@ -79,7 +88,7 @@ const ForgotPassword = () => {
         {success && (
           <div className="fixed lg:absolute bottom-16 md:bottom-56 lg:bottom-14 left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0 w-full max-w-md mx-auto px-4">
             <div className="bg-green-500 text-white p-3 rounded-md text-sm text-center">
-              Tautan reset password telah terkirim
+              Reset Password Berhasil
             </div>
           </div>
         )}
