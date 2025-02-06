@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import Logo from "../assets/images/logo-presently.svg";
 
 const ForgotPassword = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -22,18 +23,20 @@ const ForgotPassword = () => {
           onSubmit={handleSubmit}
           className="w-full max-w-md md:shadow-sm md:bg-gray-100 md:rounded-xl md:p-10 lg:shadow-none lg:rounded-none lg:bg-transparent lg:p-0"
         >
-          <h1 className="text-2xl font-bold text-[#116E63] mb-6">Reset Password</h1>
+          <h1 className="text-2xl font-bold text-[#116E63] mb-6">
+            Reset Password
+          </h1>
           <div className="mb-5">
             <label
-              htmlFor="password"
+              htmlFor="newPassword"
               className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
             >
               Masukkan Password Baru
             </label>
             <div className="relative">
               <input
-                type={showPassword ? "text" : "password"}
-                id="password"
+                type={showNewPassword ? "text" : "password"}
+                id="newPassword"
                 className="shadow-sm border border-gray-300 text-gray-700 text-sm rounded-[12px] block w-full p-3 pr-10 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Masukan Password"
                 required
@@ -41,23 +44,23 @@ const ForgotPassword = () => {
               <button
                 type="button"
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={() => setShowNewPassword(!showNewPassword)}
               >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showNewPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
           </div>
           <div className="mb-5">
             <label
-              htmlFor="password"
+              htmlFor="confirmPassword"
               className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
             >
               Ulangi Password Baru
             </label>
             <div className="relative">
               <input
-                type={showPassword ? "text" : "password"}
-                id="password"
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
                 className="shadow-sm border border-gray-300 text-gray-700 text-sm rounded-[12px] block w-full p-3 pr-10 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Masukan Password"
                 required
@@ -65,9 +68,9 @@ const ForgotPassword = () => {
               <button
                 type="button"
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
           </div>
@@ -75,7 +78,7 @@ const ForgotPassword = () => {
             type="submit"
             className="w-full bg-[#116E63] text-white rounded-[12px] py-3 font-medium hover:opacity-95 transition duration-300"
           >
-            Simpan
+            <Link to="/login">Simpan</Link>
           </button>
         </form>
         {error && (

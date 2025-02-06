@@ -66,7 +66,9 @@ const ForgotPassword = () => {
             type="submit"
             className="w-full bg-[#116E63] text-white rounded-[12px] py-3 font-medium hover:opacity-95 transition duration-300"
           >
+            <Link to='/reset-password'>
             Kirim Tautan
+            </Link>
           </button>
         </form>
         {error && (

@@ -40,12 +40,11 @@ const LoginPage = () => {
               className="mb-2 text-sm font-medium text-gray-700 flex justify-between items-center"
             >
               Password
-              <a
-                href="#"
+              <Link to='/forgot-password'
                 className="text-[#116E63] text-sm hover:underline font-medium"
               >
                 Lupa kata sandi?
-              </a>
+              </Link>
             </label>
             <div className="relative">
               <input
@@ -106,7 +105,7 @@ const LoginPage = () => {
             </button>
             <button className="text-black text-sm font-normal flex gap-3">
               Belum punya akun? 
-              <span className="text-[#116E63] hover:underline font-medium">Daftar disini</span>
+              <Link to='/register' className="text-[#116E63] hover:underline font-medium">Daftar disini</Link>
             </button>
           </div>
         </form>
