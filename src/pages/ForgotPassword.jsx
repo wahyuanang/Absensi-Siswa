@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import Logo from "../assets/images/logo-presently.svg";
@@ -22,7 +22,9 @@ const ForgotPassword = () => {
           onSubmit={handleSubmit}
           className="w-full max-w-md md:shadow-sm md:bg-gray-100 md:rounded-xl md:p-10 lg:shadow-none lg:rounded-none lg:bg-transparent lg:p-0"
         >
-          <h1 className="text-2xl font-bold text-[#116E63] mb-6">Forgot Password</h1>
+          <h1 className="text-2xl font-bold text-[#116E63] mb-6">
+            Forgot Password
+          </h1>
           <div className="mb-5">
             <label
               htmlFor="email"
