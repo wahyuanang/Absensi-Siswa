@@ -6,6 +6,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import OTP from "./pages/OTP";
+import HomePageUser from "./pages/HomePageUser";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/otp" element={<OTP />} />
-        <Route path="*" element={<NotFoundPage/>} />
+        <Route path="/homepage" element={<HomePageUser />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
